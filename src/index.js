@@ -3,8 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import path from "path";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const configPath = path.join(__dirname, '/queens/data.json');
+
+fetch(configPath)
+    .then(res => res.json())
+    .then(data => {
+        // Attach extra data
+        data.configPath = configPath;
+        ReactDOM.render(<App config={data} />, document.getElementById('root'));
+    });
+
+// ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

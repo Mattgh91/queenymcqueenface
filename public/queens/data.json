@@ -1,0 +1,17 @@
+{
+    "incorrect_colours": ["blue", "red", "silver", "black", "purple"],
+    "questions": [
+        {
+            "id": 1,
+            "covered_img": "./media/queen-1.png",
+            "uncovered_img": "./media/queen-1.png",
+            "hat_colour": "blue"
+        },
+        {
+            "id": 2,
+            "covered_img": "./media/queen-1.png",
+            "uncovered_img": "./media/queen-1.png",
+            "hat_colour": "blue"
+        }
+    ]
+}
