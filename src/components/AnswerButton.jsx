@@ -1,9 +1,10 @@
 import React from 'react';
 
-const AnswerButton = () => {
+const AnswerButton = ({ answer }) => {
+    const { colour, isCorrect } = answer;
     return (
         <div>
-            AnswerButton
+            {colour}
         </div>
     );
 };

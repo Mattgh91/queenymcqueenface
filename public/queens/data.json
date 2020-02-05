@@ -1,17 +1,73 @@
 {
-    "incorrect_colours": ["blue", "red", "silver", "black", "purple"],
     "questions": [
         {
             "id": 1,
-            "covered_img": "./media/queen-1.png",
-            "uncovered_img": "./media/queen-1.png",
-            "hat_colour": "blue"
+            "covered_img": "queens/media/the_queen.jpg",
+            "uncovered_img": "queens/media/the_queen.jpg",
+            "answers": [
+                {
+                    "colour": "blue",
+                    "isCorrect": true
+                },
+                {
+                    "colour": "silver",
+                    "isCorrect": false
+                },
+                {
+                    "colour": "red",
+                    "isCorrect": false
+                },
+                {
+                    "colour": "green",
+                    "isCorrect": false
+                }
+            ]
         },
         {
             "id": 2,
-            "covered_img": "./media/queen-1.png",
-            "uncovered_img": "./media/queen-1.png",
-            "hat_colour": "blue"
+            "covered_img": "queens/media/the_queen_2.jpeg",
+            "uncovered_img": "queens/media/the_queen_2.jpeg",
+            "answers": [
+                {
+                    "colour": "blue",
+                    "isCorrect": false
+                },
+                {
+                    "colour": "silver",
+                    "isCorrect": false
+                },
+                {
+                    "colour": "red",
+                    "isCorrect": true
+                },
+                {
+                    "colour": "green",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "covered_img": "queens/media/the_queen_2.jpeg",
+            "uncovered_img": "queens/media/the_queen_2.jpeg",
+            "answers": [
+                {
+                    "colour": "blue",
+                    "isCorrect": false
+                },
+                {
+                    "colour": "silver",
+                    "isCorrect": false
+                },
+                {
+                    "colour": "red",
+                    "isCorrect": false
+                },
+                {
+                    "colour": "green",
+                    "isCorrect": true
+                }
+            ]
         }
     ]
 }
