@@ -4,6 +4,7 @@ import {
     Route,
     Switch,
     Link,
+    Redirect,
 } from "react-router-dom";
 import LandingScreen from "./components/LandingScreen";
 import QueenImage from "./components/QueenImage";
@@ -11,11 +12,13 @@ import AnswerButtons from "./components/AnswerButtons";
 import Results from "./components/Results";
 import BottomBar from "./components/BottomBar";
 import shuffle from 'lodash.shuffle';
-import './App.css';
+import './App.scss';
 
 const App = ({ config }) => {
     const { questions} = config;
-    const [currentQuestion, setCurrentQuestion] = useState(0);
+    const [currentQuestionNum, setCurrentQuestionNum] = useState(0);
+    const [score, setScore] = useState(0);
+    const [redirect, setRedirect] = useState(false);
     const getRandomQuestions = (questions, n) => shuffle(questions).slice(0, n);
     const questionsToUse = getRandomQuestions(questions, 2);
 
@@ -24,6 +27,7 @@ const App = ({ config }) => {
 
     return (
         <Router>
+            {redirect && <Redirect to='/results' /> }
             <nav>
                 <ul>
                     <li>
@@ -44,25 +48,34 @@ const App = ({ config }) => {
                 </Route>
 
                 <Route path='/quiz'>
-                    <QueenImage
-                        currentQuestion={questionsToUse[currentQuestion]}
-                    />
-                    <AnswerButtons
-                        currentQuestion={questionsToUse[currentQuestion]}
-                        setCurrentQuestion={setCurrentQuestion}
-                    />
+                    {questionsToUse && (
+                        <>
+                            <QueenImage
+                                currentQuestion={questionsToUse[currentQuestionNum]}
+                            />
+                            <AnswerButtons
+                                currentQuestion={questionsToUse[currentQuestionNum]}
+                                setCurrentQuestionNum={setCurrentQuestionNum}
+                                currentQuestionNum={currentQuestionNum}
+                                numQuestions={questionsToUse.length}
+                                setScore={setScore}
+                                setRedirect={setRedirect}
+                            />
+                            <BottomBar
+                                currentQuestionNum={currentQuestionNum}
+                                setCurrentQuestionNum={setCurrentQuestionNum}
+                                numQuestions={questionsToUse.length}
+                                score={score}
+                                setScore={setScore}
+                            />
+                        </>
+                    )}
                 </Route>
 
                 <Route path='/results'>
                     <Results />
                 </Route>
             </Switch>
-
-            <BottomBar
-                currentQuestion={currentQuestion}
-                setCurrentQuestion={setCurrentQuestion}
-                numQuestions={questionsToUse.length}
-            />
         </Router>
     )
 };

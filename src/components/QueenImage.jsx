@@ -10,7 +10,7 @@ const QueenImage = ({ currentQuestion }) => {
 
     return (
         <div>
-            <img src={uncoveredImg} alt="" />
+            <img src={coveredImg} alt="" />
             <img src={uncoveredImg} alt="" hidden />
         </div>
     );
