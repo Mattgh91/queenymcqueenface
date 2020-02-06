@@ -2,8 +2,8 @@ import React from 'react';
 
 const LandingScreen = () => {
     return (
-        <div>
-            LandingScreen
+        <div className="landingScreen">
+            <h1>QueenyMcQueenFace</h1>
         </div>
     );
 };

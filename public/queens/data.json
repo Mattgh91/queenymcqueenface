@@ -48,8 +48,8 @@
         },
         {
             "id": 3,
-            "covered_img": "queens/media/the_queen_2.jpeg",
-            "uncovered_img": "queens/media/the_queen_2.jpeg",
+            "covered_img": "queens/media/the_queen_3.jpg",
+            "uncovered_img": "queens/media/the_queen_3.jpg",
             "answers": [
                 {
                     "colour": "blue",

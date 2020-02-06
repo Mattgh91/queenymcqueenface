@@ -13,6 +13,7 @@ import Results from "./components/Results";
 import BottomBar from "./components/BottomBar";
 import shuffle from 'lodash.shuffle';
 import './App.scss';
+import QuizPage from "./components/QuizPage";
 
 const App = ({ config }) => {
     const { questions} = config;
@@ -28,7 +29,13 @@ const App = ({ config }) => {
     return (
         <Router>
             {redirect && <Redirect to='/results' /> }
-            <nav>
+            <nav style={{
+                top: 0,
+                position: 'absolute',
+                background: '#fff',
+                zIndex: 2,
+                fontSize: 18,
+            }}>
                 <ul>
                     <li>
                         <Link to="/">Home</Link>
@@ -50,30 +57,24 @@ const App = ({ config }) => {
                 <Route path='/quiz'>
                     {questionsToUse && (
                         <>
-                            <QueenImage
+                            <QuizPage
                                 currentQuestion={questionsToUse[currentQuestionNum]}
-                            />
-                            <AnswerButtons
-                                currentQuestion={questionsToUse[currentQuestionNum]}
-                                setCurrentQuestionNum={setCurrentQuestionNum}
                                 currentQuestionNum={currentQuestionNum}
-                                numQuestions={questionsToUse.length}
+                                setCurrentQuestionNum={setCurrentQuestionNum}
+                                questionsToUse={questionsToUse}
                                 setScore={setScore}
                                 setRedirect={setRedirect}
-                            />
-                            <BottomBar
-                                currentQuestionNum={currentQuestionNum}
-                                setCurrentQuestionNum={setCurrentQuestionNum}
-                                numQuestions={questionsToUse.length}
                                 score={score}
-                                setScore={setScore}
                             />
                         </>
                     )}
                 </Route>
 
                 <Route path='/results'>
-                    <Results />
+                    <Results
+                        setRedirect={setRedirect}
+                        score={score}
+                    />
                 </Route>
             </Switch>
         </Router>

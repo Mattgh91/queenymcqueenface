@@ -9,7 +9,7 @@ const QueenImage = ({ currentQuestion }) => {
     console.log(coveredImg, uncoveredImg);
 
     return (
-        <div>
+        <div className="gameContainer__images">
             <img src={coveredImg} alt="" />
             <img src={uncoveredImg} alt="" hidden />
         </div>

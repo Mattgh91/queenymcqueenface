@@ -12,13 +12,8 @@ const AnswerButtons = ({
     const { answers } = currentQuestion;
     console.log('currentQuestion: ', currentQuestion);
 
-    useEffect(() => {
-        setCurrentQuestionNum(0);
-    }, []);
-
     return (
-        <div>
-            AnswerButtons
+        <div className="gameContainer__buttons">
             {answers.map((answer, idx) => (
                 <AnswerButton
                     key={idx}

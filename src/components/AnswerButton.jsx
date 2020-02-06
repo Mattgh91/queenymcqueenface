@@ -11,20 +11,23 @@ const AnswerButton = ({
 }) => {
     const { colour, isCorrect } = answer;
 
-    console.log('currentQuestion: ', currentQuestion);
+    console.log('currentQuestion: ', currentQuestionNum);
     console.log('numQuestions: ', numQuestions);
 
     return (
-        <button onClick={() => {
+        <button
+            className="gameContainer__buttons-button"
+            onClick={() => {
             if (isCorrect) {
                 setScore(score => score += 1);
             }
 
             if (currentQuestionNum + 1 === numQuestions) {
+                console.log('should redirect');
                 setRedirect(true);
             } else setCurrentQuestionNum(current => current += 1)
         }}>
-            {colour}
+            <span className="gameContainer__buttons-button-text">{colour}</span>
         </button>
     );
 };

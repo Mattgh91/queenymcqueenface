@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Redirect } from "react-router-dom";
+import React from 'react';
 
 const BottomBar = ({
     numQuestions,
@@ -7,19 +6,13 @@ const BottomBar = ({
     setCurrentQuestionNum,
     score,
 }) => {
-    const [redirect, setRedirect] = useState(false);
-
-    if (redirect) {
-        return <Redirect to='/results' />;
-    }
-
     return (
-        <div>
-            <span>Score: {score}</span>
-            <span>Question  {currentQuestionNum + 1} / {numQuestions}</span>
+        <div className="bottomBar">
             <button onClick={() => {
                 setCurrentQuestionNum(0);
             }}>Restart</button>
+            <span>Question  {currentQuestionNum + 1} / {numQuestions}</span>
+            <span>Score: {score}</span>
         </div>
     );
 };

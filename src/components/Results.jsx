@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-const Results = () => {
+const Results = ({ score, setRedirect }) => {
+    useEffect(() => {
+        setRedirect(false);
+    }, []);
+
     return (
-        <div>
-            Results
+        <div className="results">
+            <h1>
+                Results! <br />
+                You scored: {score}
+            </h1>
         </div>
     );
 };
