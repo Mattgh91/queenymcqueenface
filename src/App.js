@@ -7,10 +7,7 @@ import {
     Redirect,
 } from "react-router-dom";
 import LandingScreen from "./components/LandingScreen";
-import QueenImage from "./components/QueenImage";
-import AnswerButtons from "./components/AnswerButtons";
 import Results from "./components/Results";
-import BottomBar from "./components/BottomBar";
 import shuffle from 'lodash.shuffle';
 import './App.scss';
 import QuizPage from "./components/QuizPage";
@@ -25,6 +22,8 @@ const App = ({ config }) => {
 
     console.log('config: ', config);
     console.log('questions: ', questions);
+
+    console.log('questionsToUse: ', questionsToUse);
 
     return (
         <Router>
@@ -51,7 +50,10 @@ const App = ({ config }) => {
 
             <Switch>
                 <Route exact path='/'>
-                    <LandingScreen />
+                    <LandingScreen
+                        setCurrentQuestionNum={setCurrentQuestionNum}
+                        setScore={setScore}
+                    />
                 </Route>
 
                 <Route path='/quiz'>

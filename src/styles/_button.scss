@@ -8,6 +8,7 @@
             border-radius: 5px;
             position: relative;
             cursor: pointer;
+            z-index: 1;
 
             &:after {
                 content: '';
@@ -34,6 +35,17 @@
                 justify-content: center;
                 align-items: center;
                 text-transform: uppercase;
+            }
+
+            &-long {
+                padding: 40px 90px;
+                margin: 10px;
+                font-size: 42px;
+
+                a {
+                    color: $primaryDark;
+                    text-decoration: none;
+                }
             }
         }
     }

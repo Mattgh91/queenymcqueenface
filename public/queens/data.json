@@ -2,8 +2,8 @@
     "questions": [
         {
             "id": 1,
-            "covered_img": "queens/media/the_queen.jpg",
-            "uncovered_img": "queens/media/the_queen.jpg",
+            "covered_img": "queens/media/image1_covered.png",
+            "uncovered_img": "queens/media/image1.png",
             "answers": [
                 {
                     "colour": "blue",
@@ -25,8 +25,8 @@
         },
         {
             "id": 2,
-            "covered_img": "queens/media/the_queen_2.jpeg",
-            "uncovered_img": "queens/media/the_queen_2.jpeg",
+            "covered_img": "queens/media/image2_covered.png",
+            "uncovered_img": "queens/media/image2.png",
             "answers": [
                 {
                     "colour": "blue",
@@ -38,18 +38,18 @@
                 },
                 {
                     "colour": "red",
-                    "isCorrect": true
+                    "isCorrect": false
                 },
                 {
                     "colour": "green",
-                    "isCorrect": false
+                    "isCorrect": true
                 }
             ]
         },
         {
             "id": 3,
-            "covered_img": "queens/media/the_queen_3.jpg",
-            "uncovered_img": "queens/media/the_queen_3.jpg",
+            "covered_img": "queens/media/image3_covered.png",
+            "uncovered_img": "queens/media/image3.png",
             "answers": [
                 {
                     "colour": "blue",
@@ -60,12 +60,12 @@
                     "isCorrect": false
                 },
                 {
-                    "colour": "red",
-                    "isCorrect": false
+                    "colour": "pink",
+                    "isCorrect": true
                 },
                 {
                     "colour": "green",
-                    "isCorrect": true
+                    "isCorrect": false
                 }
             ]
         }

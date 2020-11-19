@@ -18,17 +18,17 @@ const QuizPage = ({
     useEffect(() => {
         setCurrentQuestionNum(0);
         setScore(0);
-    }, []);
+    }, [setScore, setCurrentQuestionNum]);
 
     return (
         <>
             <div className="gameContainer">
                 <QueenImage
-                    key={`${currentQuestion}-image`}
+                    key={`${currentQuestionNum}-image`}
                     currentQuestion={currentQuestion}
                 />
                 <AnswerButtons
-                    key={`${currentQuestion}-answers`}
+                    key={`${currentQuestionNum}-answers`}
                     currentQuestion={currentQuestion}
                     setCurrentQuestionNum={setCurrentQuestionNum}
                     currentQuestionNum={currentQuestionNum}
